@@ -192,11 +192,11 @@ def run_program(symbol, start_date, end_date, saveFile):
 
 
     for i in range(len(weekly_data)):
-        ma_len = 2
-        ema_len_5 = 2
+        ma_len = 9
+        ema_len_5 = 5
         
         weekly_data[i]['EMA_5'] = calculate_ema(weekly_data[i]['Close'], ema_len_5)
-        weekly_data[i]['KNN_MA'] = calculate_knn_ma(weekly_data[i]['Close'], ma_len)
+        weekly_data[i]['KNN_MA'] = calculate_ema(weekly_data[i]['Close'], ma_len)
         weekly_data[i]['RSI'] = calculate_rsi(weekly_data[i]['Close'], period=14)
         weekly_data[i]['RSI_EMA_14'] = calculate_ema(weekly_data[i]['RSI'], 14)
 
@@ -320,7 +320,7 @@ def run_program(symbol, start_date, end_date, saveFile):
 
 
         # if (KnnEmaX == 1) and (tradeOpen == False) and (TrendConfirmation == 1) and (MACDConverge == 1) and (vwap < close_price * 1.01) and (weeklyKnnEmaX == 1) or (tradeOpen == False and (weeklyKnnEmaX == 1) and (KnnEmaX == 1)):
-            if (tradeOpen == False  and KnnEmaX == 0 and weeklyKnnEmaX == 1 and weeklyRsiEmaX == 1 and RsiEmaX == 0):
+            if (tradeOpen == False  and ((KnnEmaX == 1) and (weeklyKnnEmaX == 1))  and (MACDConverge ==1 and TrendConfirmation == 0)):
                 
                 buyPrice = close_price
                 #print("Buy Price: ", buyPrice)
@@ -328,7 +328,7 @@ def run_program(symbol, start_date, end_date, saveFile):
                 tradeOpen = True
             
                 
-            elif (tradeOpen == False  or KnnEmaX == 1 or weeklyKnnEmaX == 0 or weeklyRsiEmaX == 0 or RsiEmaX == 1):
+            elif (tradeOpen == False and (KnnEmaX == 0) or ( weeklyKnnEmaX == 0) or (MACDConverge == 0) or (Signal > 0)):
                 price = close_price
                 time = date
                 #print("Sell Price: ", sellPrice)
