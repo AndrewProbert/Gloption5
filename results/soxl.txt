@@ -3657,3 +3657,7 @@ Year: 2021, Profit: 30.013240814208984
 Year: 2022, Profit: 6.608980178833008
 Year: 2023, Profit: 4.88143253326416
 PS C:\Users\Andre\Gloption4>
+
+68 losers
+190 total
+0.6421052631578947 win rate

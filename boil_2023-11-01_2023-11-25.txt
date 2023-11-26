@@ -1,0 +1,11 @@
+  Buy Price    Sell Price  Buy Time                   Sell Time                    Profit    Capital
+-----------  ------------  -------------------------  -------------------------  --------  ---------
+      65.74         59.53  2023-11-01 00:00:00-04:00  2023-11-06 00:00:00-05:00     -6.21    905.537
+
+Profit by Year:
+Year: 2023, Profit: -6.209999084472656
+
+Profit Trades: 0, Loss Trades: 1, Percentage: 0.0
+
+Sharpe Ratio: -inf
+Sortino Ratio: 0

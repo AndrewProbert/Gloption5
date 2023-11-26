@@ -1,0 +1,4 @@
+Buy Price    Sell Price    Buy Time    Sell Time    Profit    Capital
+-----------  ------------  ----------  -----------  --------  ---------
+
+Profit by Year:
